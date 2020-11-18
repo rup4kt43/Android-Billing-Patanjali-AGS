@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="product"
+            type="com.example.androidbilling.bill_load.pojo.ProdListItem" />
+    </data>
+
+
+    <LinearLayout
+
+        android:id="@+id/ll_item_layout"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+
+            android:orientation="horizontal">
+            <View
+
+                android:layout_marginRight="2dp"
+                android:layout_marginEnd="2dp"
+                android:layout_width="1dp"
+                android:layout_height="wrap_content"
+                android:background="@color/blackColor"/>
+
+            <TextView
+                android:layout_marginRight="4dp"
+                android:id="@+id/tv_sn"
+                android:gravity="center"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.07"
+                android:textColor="@color/blackColor"
+                android:text="@string/sn" />
+
+            <View
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_width="1dp"
+                android:layout_height="wrap_content"
+                android:background="@color/blackColor"/>
+
+            <TextView
+                android:id="@+id/tv_desca"
+
+                android:layout_marginLeft="4dp"
+                android:focusable="true"
+
+                android:focusableInTouchMode="true"
+                android:ellipsize="marquee"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:scrollHorizontally="true"
+                android:singleLine="true"
+                android:gravity="center_vertical"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.4"
+                android:text="@{product.itemdesc}"/>
+
+            <View
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_width="1dp"
+                android:layout_height="wrap_content"
+                android:background="@color/blackColor"/>
+
+            <TextView
+                android:layout_marginLeft="4dp"
+                android:gravity="center_vertical"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.2"
+                android:text="@{` ` + product.mrp}"/>
+
+            <View
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_width="1dp"
+                android:layout_height="wrap_content"
+                android:background="@color/blackColor"/>
+
+            <TextView
+                android:layout_marginLeft="4dp"
+                android:gravity="center_vertical"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.15"
+                android:text="@{` `+ product.quantity}"/>
+
+            <View
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_width="1dp"
+                android:layout_height="wrap_content"
+                android:background="@color/blackColor"/>
+
+            <TextView
+
+                android:paddingRight="4dp"
+                android:id="@+id/tv_amount"
+                android:gravity="center_vertical|end"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.2"
+
+                />
+            <View
+                android:layout_marginLeft="2dp"
+                android:layout_marginStart="2dp"
+                android:layout_width="1dp"
+                android:layout_height="wrap_content"
+                android:background="@color/blackColor"/>
+
+
+
+
+
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/blackColor"/>
+
+
+    </LinearLayout>
+</layout>

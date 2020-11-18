@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="billingDetails"
+            type="com.example.androidbilling.billing_components.billing_preview.dto.BillingCalculationDTO" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/ll_whole_screen"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+
+        tools:context=".billing_components.billing_preview.view.BillingView">
+
+        <LinearLayout
+            android:padding="@dimen/mainPageMargin"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.9"
+            android:orientation="vertical"
+            >
+
+            <AutoCompleteTextView
+                android:padding="@dimen/buttonPadding"
+                android:background="@drawable/edit_text_background"
+                android:id="@+id/act_customerName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Customer Name"/>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:hint="@string/customer_address">
+
+                <com.google.android.material.textfield.TextInputEditText
+
+                    android:id="@+id/et_customerAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:hint="@string/customer_phone">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:inputType="number"
+                    android:id="@+id/et_customerPhoneNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
+            <View
+
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/widgetSpacing"
+                android:background="@color/blackColor" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:gravity="center_vertical"
+
+                android:orientation="horizontal">
+
+                <View
+
+                    android:layout_width="1dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="2dp"
+                    android:layout_marginRight="2dp"
+                    android:background="@color/blackColor" />
+
+                <TextView
+                    style="@style/billTitleTextStyle"
+
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="4dp"
+                    android:layout_weight="0.07"
+                    android:gravity="center"
+                    android:text="@string/sn" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginRight="2dp"
+                    android:background="@color/blackColor" />
+
+                <TextView
+                    style="@style/billTitleTextStyle"
+
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="4dp"
+                    android:layout_weight="0.4"
+                    android:gravity="center_vertical"
+                    android:text="@string/description" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginRight="2dp"
+                    android:background="@color/blackColor" />
+
+                <TextView
+                    style="@style/billTitleTextStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="4dp"
+                    android:layout_weight="0.15"
+                    android:gravity="center_vertical"
+                    android:text="@string/mrp" />
+
+                <View
+
+                    android:layout_width="1dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginRight="2dp"
+                    android:background="@color/blackColor" />
+
+                <TextView
+                    style="@style/billTitleTextStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="4dp"
+                    android:layout_weight="0.15"
+                    android:gravity="center_vertical"
+                    android:text="@string/qty" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginRight="2dp"
+                    android:background="@color/blackColor" />
+
+                <TextView
+                    style="@style/billTitleTextStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.2"
+                    android:gravity="center"
+                    android:text="@string/amount" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="2dp"
+                    android:layout_marginLeft="2dp"
+                    android:background="@color/blackColor" />
+
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/blackColor" />
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.7" />
+        </LinearLayout>
+
+
+        <LinearLayout
+
+            android:gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:background="@drawable/billing_calculation_background"
+            android:orientation="vertical">
+
+            <LinearLayout
+
+                android:paddingTop="10dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.7"
+                    style="@style/billingCalculationTextStyle"
+                    android:text="@string/gst"/>
+
+
+
+
+                    <TextView
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"
+                        android:layout_marginLeft="10dp"
+                        android:background="@drawable/edit_text_background"
+                        android:text="@{`₹  `+billingDetails.totalGST}"
+                        style="@style/billingCalculationSubTextStyle"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.25"/>
+
+
+
+
+
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
+
+                android:paddingTop="10dp"
+                android:paddingLeft="20dp"
+                android:paddingBottom="10dp"
+                android:paddingRight="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.7"
+                    style="@style/billingCalculationTextStyle"
+                    android:text="@string/discount"/>
+
+
+                <TextView
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/edit_text_background"
+                    android:text="@{`₹  `+billingDetails.totalDiscount}"
+                    style="@style/billingCalculationSubTextStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.25"/>
+
+
+            </LinearLayout>
+
+
+
+
+
+
+
+
+            <LinearLayout
+
+                android:background="@drawable/net_amount_background"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:paddingBottom="15dp"
+                android:paddingTop="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:textColor="@color/textColor"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.7"
+
+                    style="@style/billingCalculationTextStyle"
+                    android:textSize="18sp"
+                    android:text="@string/net_amount"/>
+
+
+                <TextView
+
+                    android:layout_marginLeft="10dp"
+
+                    android:textColor="@color/textColor"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:text="@{`₹  `+billingDetails.netAmount}"
+                    style="@style/billingCalculationSubTextStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.25"/>
+
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+</layout>

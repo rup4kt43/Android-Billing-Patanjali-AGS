@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="layout_widthPercent" format="fraction">
+    </attr>
+    <attr name="layout_heightPercent" format="fraction">
+    </attr>
+    <attr name="layout_marginPercent" format="fraction">
+    </attr>
+    <attr name="layout_marginLeftPercent" format="fraction">
+    </attr>
+    <attr name="layout_marginTopPercent" format="fraction">
+    </attr>
+    <attr name="layout_marginRightPercent" format="fraction">
+    </attr>
+    <attr name="layout_marginBottomPercent" format="fraction">
+    </attr>
+    <attr name="layout_marginStartPercent" format="fraction">
+    </attr>
+    <attr name="layout_marginEndPercent" format="fraction">
+    </attr>
+</resources>

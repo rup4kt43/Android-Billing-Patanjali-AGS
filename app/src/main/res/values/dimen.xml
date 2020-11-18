@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="mainPageMargin">8dp</dimen>
+    <dimen name="editTextPadding">5dp</dimen>
+    <dimen name="buttonPadding">12dp</dimen>
+
+    <dimen name="widgetSpacing">10dp</dimen>
+
+    <dimen name="differentWidgetSpacing">20dp</dimen>
+
+    <!--card-->
+    <dimen name="cardElevation">2dp</dimen>
+    <dimen name="cardPadding">12dp</dimen>
+    <dimen name="cardCornorRadius">25dp</dimen>
+
+
+
+
+</resources>

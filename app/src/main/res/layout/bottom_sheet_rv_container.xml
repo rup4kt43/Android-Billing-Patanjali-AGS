@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="modes"
+            type="com.example.androidbilling.billing_components.bill_save.pojo.paymentmode.PaymentModeResultItem" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/ll_mode"
+        android:padding="@dimen/buttonPadding"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+
+
+        <TextView
+                android:id="@+id/tv_mode"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            style="@style/SubHeadingTextStyle"
+
+            android:layout_weight="0.9"/>
+
+
+
+        <CheckBox
+            android:id="@+id/checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        </CheckBox>
+
+
+
+    </LinearLayout>
+</layout>

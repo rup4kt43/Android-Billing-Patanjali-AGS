@@ -1,0 +1,794 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="dataModel"
+            type="com.example.androidbilling.billing_components.bill_save.calculation_part.DataModel" />
+
+        <variable
+            name="itemDetails"
+            type="com.example.androidbilling.billing_components.billing_preview.dto.BillingCalculationDTO" />
+    </data>
+
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:background="@android:color/white">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="60dp"
+
+            android:fillViewport="false">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/mainPageMargin"
+                android:orientation="vertical">
+
+
+                <!--Cash Mode Interface-->
+                <LinearLayout
+
+                    android:id="@+id/ll_cash_mode_interface"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/mainPageMargin"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+
+                        <TextView
+                            style="@style/SubHeadingTextStyle2"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.4"
+                            android:gravity="center_vertical"
+                            android:text="Cash Tender" />
+
+                        <EditText
+                            android:id="@+id/et_cash_tender"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.5"
+                            android:autofillHints="@string/password"
+                            android:background="@drawable/edit_text_background"
+                            android:gravity="end"
+                            android:inputType="numberDecimal"
+
+                            android:padding="@dimen/mainPageMargin"
+
+
+                            android:singleLine="true"
+                            android:text="@={dataModel.cashTender}" />
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="@dimen/widgetSpacing"
+                        android:orientation="horizontal">
+
+
+                        <TextView
+                            style="@style/SubHeadingTextStyle2"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.4"
+                            android:gravity="center_vertical"
+                            android:text="Cash Amount" />
+
+                        <TextView
+                            android:id="@+id/et_cash_amount"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+
+                            android:layout_weight="0.5"
+                            android:autofillHints="@string/password"
+                            android:background="@drawable/edit_text_background"
+                            android:gravity="end"
+
+                            android:inputType="number"
+                            android:padding="@dimen/mainPageMargin"
+
+
+                            android:singleLine="true"
+                            android:text="@{``+dataModel.cashAmount}" />
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+
+                        <TextView
+                            style="@style/SubHeadingTextStyle2"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.4"
+                            android:gravity="center_vertical"
+                            android:text="Cash Return" />
+
+                        <TextView
+                            android:id="@+id/et_cash_return"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="@dimen/widgetSpacing"
+                            android:layout_weight="0.5"
+                            android:autofillHints="@string/password"
+                            android:background="@drawable/edit_text_background"
+
+                            android:gravity="end"
+                            android:padding="@dimen/mainPageMargin"
+                            android:singleLine="true"
+                            android:text="@{dataModel.cashReturn}" />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+                <!--Card Mode Interface-->
+                <LinearLayout
+                    android:id="@+id/ll_coupen_mode_interface"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/mainPageMargin"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+
+                        <TextView
+                            style="@style/SubHeadingTextStyle2"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.4"
+                            android:gravity="center_vertical"
+                            android:text="Card Amount" />
+
+                        <EditText
+
+                            android:id="@+id/et_coupon_amount"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.5"
+                            android:autofillHints="@string/password"
+                            android:background="@drawable/edit_text_background"
+                            android:gravity="end"
+                            android:inputType="numberDecimal"
+                            android:padding="@dimen/mainPageMargin"
+
+
+                            android:singleLine="true"
+                            android:text="@={dataModel.cardAmount}" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
+
+
+                        <TextView
+                            style="@style/SubHeadingTextStyle2"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.4"
+                            android:gravity="center_vertical"
+                            android:text="Card No" />
+
+                        <EditText
+
+                            android:id="@+id/et_card_number"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.5"
+                            android:autofillHints="@string/password"
+                            android:background="@drawable/edit_text_background"
+                            android:gravity="end"
+                            android:inputType="numberDecimal"
+
+
+                            android:padding="@dimen/mainPageMargin"
+                            android:singleLine="true" />
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="@dimen/widgetSpacing"
+                        android:orientation="horizontal">
+
+
+                        <TextView
+                            style="@style/SubHeadingTextStyle2"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.4"
+                            android:gravity="center_vertical"
+                            android:text="Card Name" />
+
+                        <LinearLayout
+
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_weight="0.5"
+                            android:background="@drawable/edit_text_background">
+
+                            <Spinner
+
+                                android:id="@+id/spn_coupon_mode"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+
+                                android:dropDownVerticalOffset="40dp"
+                                android:gravity="end"
+
+
+                                android:singleLine="true" />
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
+
+
+                        <TextView
+                            style="@style/SubHeadingTextStyle2"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.4"
+                            android:gravity="center_vertical"
+                            android:text="Approval Code" />
+
+                        <EditText
+
+                            android:id="@+id/et_approval_code"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.5"
+                            android:autofillHints="@string/password"
+                            android:background="@drawable/edit_text_background"
+                            android:gravity="end"
+                            android:inputType="numberDecimal"
+
+
+                            android:padding="@dimen/mainPageMargin"
+                            android:singleLine="true" />
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
+
+
+                        <TextView
+                            style="@style/SubHeadingTextStyle2"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.4"
+                            android:gravity="center_vertical"
+                            android:text="Card Holder" />
+
+                        <EditText
+
+                            android:id="@+id/et_card_holder"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.5"
+                            android:autofillHints="@string/password"
+                            android:background="@drawable/edit_text_background"
+                            android:gravity="end"
+
+
+
+                            android:padding="@dimen/mainPageMargin"
+                            android:singleLine="true" />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+
+                <!--Samriddhi Card Mode Interface-->
+                <LinearLayout
+
+                    android:id="@+id/ll_samriddhi_card_mode_interface"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/mainPageMargin"
+                    android:visibility="visible">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+
+                        <TextView
+                            style="@style/SubHeadingTextStyle2"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.4"
+                            android:gravity="center_vertical"
+                            android:text="Samridhi Card Amount" />
+
+                        <EditText
+
+                            android:inputType="numberDecimal"
+                            android:id="@+id/et_samridhi_card_amoun"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.5"
+                            android:autofillHints="@string/password"
+                            android:background="@drawable/edit_text_background"
+                            android:text="@={dataModel.samriddhiAmount}"
+                            android:gravity="end"
+
+                            android:padding="@dimen/mainPageMargin"
+                            android:singleLine="true" />
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="@dimen/widgetSpacing"
+                        android:orientation="horizontal">
+
+
+                        <TextView
+                            style="@style/SubHeadingTextStyle2"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.4"
+                            android:gravity="center_vertical"
+                            android:text="Card Number" />
+
+                        <EditText
+                            android:id="@+id/et_samridhi_card_number"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.5"
+                            android:autofillHints="@string/password"
+                            android:background="@drawable/edit_text_background"
+
+                            android:gravity="end"
+                            android:inputType="numberDecimal"
+
+
+                            android:padding="@dimen/mainPageMargin"
+                            android:singleLine="true" />
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+
+                        <TextView
+                            style="@style/SubHeadingTextStyle2"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.4"
+                            android:gravity="center_vertical"
+                            android:text="Card Holder Name" />
+
+                        <EditText
+                            android:id="@+id/et_samridhi_card_holder_name"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="@dimen/widgetSpacing"
+                            android:layout_weight="0.5"
+                            android:autofillHints="@string/password"
+                            android:background="@drawable/edit_text_background"
+                            android:enabled="false"
+
+
+                            android:padding="@dimen/mainPageMargin"
+                            android:singleLine="true" />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+
+                <!--Wallet Interface-->
+                <LinearLayout
+
+                    android:id="@+id/ll_wallet_interface"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/mainPageMargin"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+
+                        <TextView
+                            style="@style/SubHeadingTextStyle2"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.4"
+                            android:gravity="center_vertical"
+                            android:text="Wallet Amount" />
+
+                        <EditText
+
+                            android:id="@+id/et_wallet_amount"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.5"
+                            android:autofillHints="@string/password"
+                            android:background="@drawable/edit_text_background"
+                            android:gravity="end"
+                            android:inputType="numberDecimal"
+
+                            android:padding="@dimen/mainPageMargin"
+
+
+                            android:singleLine="true"
+                            android:text="@={dataModel.walletAmount}" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="@dimen/widgetSpacing"
+                        android:orientation="horizontal">
+
+
+                        <TextView
+                            style="@style/SubHeadingTextStyle2"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.4"
+                            android:gravity="center_vertical"
+                            android:text="Wallet Type" />
+
+                        <LinearLayout
+
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_weight="0.5"
+                            android:background="@drawable/edit_text_background">
+
+                            <Spinner
+
+                                android:id="@+id/spn_wallet"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+
+                                android:dropDownVerticalOffset="40dp"
+                                android:gravity="end"
+
+
+                                android:singleLine="true" />
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_marginTop="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+
+                        <TextView
+                            style="@style/SubHeadingTextStyle2"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.4"
+                            android:gravity="center_vertical"
+                            android:text="Card No" />
+
+                        <EditText
+
+                            android:id="@+id/et_wallet_card_number"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.5"
+                            android:autofillHints="@string/password"
+                            android:background="@drawable/edit_text_background"
+                            android:gravity="end"
+
+                            android:inputType="numberDecimal"
+
+
+                            android:padding="@dimen/mainPageMargin"
+                            android:singleLine="true" />
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+
+                <!--Payment Details Interface-->
+                <LinearLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/layout_background"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorAccent"
+                        android:gravity="center_horizontal"
+                        android:padding="@dimen/mainPageMargin"
+                        android:text="PAYMENT DETAILS"
+                        android:textColor="@android:color/white" />
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:padding="@dimen/buttonPadding">
+
+
+                        <LinearLayout
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/SubHeadingTextStyle2"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="0.4"
+                                android:gravity="center_vertical"
+                                android:text="Cash">
+
+                            </TextView>
+
+                            <TextView
+                                android:id="@+id/et_cash"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="0.5"
+                                android:background="@drawable/edit_text_background"
+                                android:gravity="end"
+                                android:padding="@dimen/mainPageMargin"
+                                android:text="@{``+dataModel.cashAmount}" />
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/widgetSpacing"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/SubHeadingTextStyle2"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="0.4"
+                                android:gravity="center_vertical"
+                                android:text="Card">
+
+                            </TextView>
+
+                            <TextView
+                                android:id="@+id/et_card"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="0.5"
+                                android:background="@drawable/edit_text_background"
+                                android:gravity="end"
+                                android:padding="@dimen/mainPageMargin"
+
+                                android:text="@{dataModel.cardAmount}" />
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/widgetSpacing"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/SubHeadingTextStyle2"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="0.4"
+                                android:gravity="center_vertical"
+                                android:text="Samridhi Card">
+
+                            </TextView>
+
+                            <TextView
+                                android:id="@+id/et_samridhi_card"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="0.5"
+                                android:background="@drawable/edit_text_background"
+                                android:gravity="end"
+                                android:padding="@dimen/mainPageMargin"
+
+                                android:text="@{dataModel.samriddhiAmount}" />
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/widgetSpacing"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/SubHeadingTextStyle2"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="0.4"
+                                android:gravity="center_vertical"
+                                android:text="Wallet">
+
+                            </TextView>
+
+                            <TextView
+                                android:id="@+id/et_wallet"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="0.5"
+                                android:background="@drawable/edit_text_background"
+                                android:gravity="end"
+                                android:padding="@dimen/mainPageMargin"
+
+                                android:text="@{dataModel.walletAmount}" />
+
+
+                        </LinearLayout>
+
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/widgetSpacing"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/SubHeadingTextStyle2"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="0.4"
+                                android:gravity="center_vertical"
+                                android:text="Balance">
+
+                            </TextView>
+
+                            <TextView
+                                android:id="@+id/et_balance"
+                                style="@style/SubHeadingTextStyle"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="0.5"
+                                android:background="@drawable/edit_text_background"
+                                android:gravity="end"
+                                android:padding="@dimen/mainPageMargin"
+                                android:text="@{dataModel.balanceAmount}"
+
+                                />
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/widgetSpacing"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/SubHeadingTextStyle2"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="0.4"
+                                android:gravity="center_vertical"
+                                android:text="TENDER AMOUNT">
+
+                            </TextView>
+
+                            <TextView
+                                android:id="@+id/et_tender"
+                                style="@style/SubHeadingTextStyle"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="0.5"
+                                android:background="@drawable/edit_text_background"
+                                android:gravity="end"
+                                android:padding="@dimen/mainPageMargin"
+
+                                android:text="0.00" />
+
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+
+                <Spinner
+
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+
+                    android:visibility="gone" />
+
+
+            </LinearLayout>
+
+        </ScrollView>
+
+
+        <include
+            android:id="@+id/bsl_payment_modes"
+            layout="@layout/payment_mode_bottom_sheet" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</layout>

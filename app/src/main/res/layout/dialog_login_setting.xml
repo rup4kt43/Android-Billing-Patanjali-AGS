@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+
+    <TextView
+
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/colorPrimary"
+        style="@style/SubHeadingTextStyle"
+        android:text="Login Setting"
+        android:textColor="@android:color/white"
+        android:gravity="center"
+        android:layout_marginBottom="10dp"
+        android:textStyle="bold"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_margin="@dimen/mainPageMargin"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Company Id :"
+            android:textStyle="bold"
+            android:textColor="@color/textColor"
+            android:layout_weight="0.3"/>
+
+        <EditText
+            android:inputType="number "
+            android:id="@+id/et_companyId"
+            android:layout_width="0dp"
+            android:layout_weight="0.6"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edit_text_background"
+            android:padding="10dp"
+            />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <Button
+            android:backgroundTint="@color/colorAccent"
+            android:id="@+id/btn_apply"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Apply"
+            android:layout_weight="0.5"/>
+
+        <Button
+            android:id="@+id/btn_cancel"
+            android:layout_marginLeft="10dp"
+            android:backgroundTint="@color/alert"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Cancel"
+            android:layout_weight="0.5"/>
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>

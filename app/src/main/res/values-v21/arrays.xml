@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="beep_entries">
+        <item>Default Beep</item>
+        <item>Carbilicon Beep</item>
+        <item>Computer Beep</item>
+        <item>Tone Beep</item>
+    </array>
+    <array name="beep_values">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </array>
+    <array name="debug_level_entries">
+        <item>Off</item>
+        <item>On</item>
+        <item>Verbose</item>
+    </array>
+    <array name="debug_level_values">
+        <item>4</item>
+        <item>3</item>
+        <item>2</item>
+    </array>
+    <array name="encoding_values">
+        <item>US-ASCII</item>
+        <item>ISO-8859-1</item>
+        <item>UTF-8</item>
+        <item>UTF-16</item>
+        <item>UTF-16BE</item>
+        <item>UTF-16LE</item>
+    </array>
+    <array name="illumination_entries">
+        <item>Auto</item>
+        <item>Always On</item>
+        <item>Always Off</item>
+    </array>
+    <array name="illumination_values">
+        <item>Auto</item>
+        <item>Always On</item>
+        <item>Always Off</item>
+    </array>
+    <array name="resolution_entries">
+        <item>1920 x 1080</item>
+        <item>1280 x 720</item>
+        <item>640 x 480</item>
+        <item>352 x 288</item>
+    </array>
+    <array name="resolution_values">
+        <item>1920 x 1080</item>
+        <item>1280 x 720</item>
+        <item>640 x 480</item>
+        <item>352 x 288</item>
+    </array>
+</resources>

@@ -1,0 +1,4 @@
+include ':ONGOMPOS_SMARTPEAK'
+include ':barcode_scanner'
+include ':app'
+rootProject.name = "Android Billing"

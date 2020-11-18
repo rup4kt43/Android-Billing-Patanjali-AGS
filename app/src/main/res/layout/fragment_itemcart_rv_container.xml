@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="batchDetails"
+            type="com.example.androidbilling.sales_menu_components.salesmenu.model.pojo.items_details_pojo.BatchesItem" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        app:cardElevation="@dimen/cardElevation"
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+
+       >
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/cardPadding">
+
+            <TextView
+                android:textStyle="bold"
+
+                style="@style/SubHeadingTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text= "@{batchDetails.desca}"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text= "@{`Batch Name  : ` + batchDetails.batch}"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text= "@{`MRP : ` + batchDetails.mrp}"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text= "@{`GST : ` + batchDetails.gst}"/>
+          <LinearLayout
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="horizontal">
+
+              <TextView
+
+                  style="@style/SubHeadingTextStyle"
+                  android:layout_width="0dp"
+                  android:layout_weight="0.5"
+                  android:layout_height="wrap_content"
+                  android:text= "@{`Quantity :  `+ batchDetails.quantity }"/>
+
+              <TextView
+                  android:id="@+id/tv_discount"
+                  style="@style/SubHeadingTextStyle"
+                  android:layout_width="0dp"
+                  android:layout_weight="0.5"
+                  android:layout_height="wrap_content"
+                 />
+          </LinearLayout>
+
+          <LinearLayout
+              android:visibility="gone"
+              android:id="@+id/ll_edit"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical">
+
+              <LinearLayout
+                  android:layout_marginTop="@dimen/widgetSpacing"
+                  android:layout_width="match_parent"
+                  android:orientation="horizontal"
+                  android:layout_height="wrap_content">
+
+                  <com.google.android.material.textfield.TextInputLayout
+
+                      android:id="@+id/til_quantity"
+                      style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                      android:layout_width="0dp"
+                      android:layout_weight="0.3"
+                      android:hint="New Quantity"
+                      android:layout_height="wrap_content"
+                      >
+                      <com.google.android.material.textfield.TextInputEditText
+                          android:layout_width="match_parent"
+                          android:textSize="14sp"
+                          android:inputType="numberDecimal"
+                          android:layout_height="match_parent"
+                          android:id="@+id/et_quantity"/>
+                  </com.google.android.material.textfield.TextInputLayout>
+
+                  <com.google.android.material.textfield.TextInputLayout
+                      android:layout_marginLeft="4dp"
+
+                      android:id="@+id/til_discount"
+                      style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                      android:layout_width="0dp"
+                      android:layout_weight="0.3"
+                      android:hint="Discount"
+                      android:layout_height="wrap_content"
+                      >
+                      <com.google.android.material.textfield.TextInputEditText
+                          android:layout_width="match_parent"
+                          android:textSize="14sp"
+                          android:inputType="numberDecimal"
+                          android:layout_height="match_parent"
+                          android:id="@+id/et_discount"/>
+                  </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
+
+
+              </LinearLayout>
+
+              <LinearLayout
+                  android:layout_marginTop="@dimen/widgetSpacing"
+                    android:orientation="horizontal"
+
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content">
+
+                  <LinearLayout
+                      android:layout_width="0dp"
+                      android:layout_height="match_parent"
+                      android:layout_weight="0.5"
+                      android:orientation="horizontal">
+
+                      <TextView
+                          style="@style/SubHeadingTextStyle"
+                          android:gravity="center_vertical"
+                          android:layout_width="wrap_content"
+                          android:layout_height="match_parent"
+                          android:text="Discount In: "/>
+
+                      <RadioGroup
+                            android:id="@+id/rg_disMode"
+                          android:checkedButton="@id/rb_rupees"
+                          android:gravity="center_vertical"
+                          android:layout_width="match_parent"
+                          android:layout_height="match_parent"
+                          android:orientation="horizontal">
+
+                          <RadioButton
+                              android:id="@+id/rb_rupees"
+                              android:layout_width="wrap_content"
+                              android:layout_height="wrap_content"
+                              android:text="₹"/>
+                          <RadioButton
+                              android:id="@+id/rb_percentage"
+                              android:layout_width="wrap_content"
+                              android:layout_height="wrap_content"
+                              android:text="%"/>
+                      </RadioGroup>
+
+                  </LinearLayout>
+                  <Button
+                      android:layout_marginLeft="10dp"
+
+                        android:padding="@dimen/buttonPadding"
+                      android:id="@+id/btn_apply"
+
+                      android:layout_width="0dp"
+                      android:layout_height="wrap_content"
+                      android:layout_weight="0.2"
+                      android:text="APPLY"/>
+
+
+
+
+              </LinearLayout>
+
+
+          </LinearLayout>
+
+
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+</layout>

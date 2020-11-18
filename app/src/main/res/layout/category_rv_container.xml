@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="verticalModel"
+            type="com.example.androidbilling.sales_menu_components.categorySelection.dto.VerticalDTO" />
+    </data>
+
+
+
+        <LinearLayout
+            android:id="@+id/ll_category"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="@dimen/cardPadding">
+
+
+            <TextView
+
+                android:id="@+id/tv_Category"
+                style="@style/SubHeadingTextStyle"
+                android:layout_width="0dp"
+                android:layout_weight="0.8"
+                android:layout_height="wrap_content" />
+
+
+            <CheckBox
+                android:theme="@style/DisabledButton"
+                android:buttonTint="@color/colorPrimary"
+
+
+                android:id="@+id/checkbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+
+</layout>

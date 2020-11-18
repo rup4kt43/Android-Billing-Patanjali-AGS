@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#219C5F</color>
+    <color name="colorPrimaryDark">#219C5F</color>
+    <color name="colorAccent">#1EBA6D</color>
+
+    <color name="alert">#A64452</color>
+
+    <color name="textColor">#696969</color>
+    <color name="viewLineColor">#C0C0C0</color>
+    <color name="blackColor">#000000</color>
+    <color name="buttonTextColor">#ffffff</color>
+
+    <color name="settingBackGroundColor">#F2F2F2</color>
+
+    <color name="reddish">#AE4E4E</color>
+
+    <color name="info">#50BCDE</color>
+
+
+    <!--scanner-->
+    <color name="accent">#ffffffff</color>
+    <color name="cross_hairs">#ff80d25b</color>
+    <color name="picklist_fill">#4080c4d2</color>
+    <color name="picklist_stroke">#400000ff</color>
+    <color name="primary">#ff000000</color>
+    <color name="primary_dark">#ff000000</color>
+
+    <color name="transparent_green">#330A9615</color>
+
+
+
+
+</resources>

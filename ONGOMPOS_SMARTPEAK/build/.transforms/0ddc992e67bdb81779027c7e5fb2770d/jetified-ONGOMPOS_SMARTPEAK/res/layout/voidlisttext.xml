@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/LLtv"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="#fff"
+    android:cacheColorHint="#00000000"
+    android:padding="@dimen/padding_15">
+
+    <com.smartpeak.functions.MyTextView
+        android:id="@+id/txtTransactionID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:padding="@dimen/padding_5"
+        android:text="TRANSACTION ID : "
+        android:textColor="#000"
+        android:textSize="@dimen/font_12" />
+
+    <com.smartpeak.functions.MyTextView
+        android:id="@+id/txtTransactionType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:padding="@dimen/padding_5"
+        android:text="TRANSACTION TYPE : "
+        android:textColor="#000"
+        android:textSize="@dimen/font_12" />
+
+    <com.smartpeak.functions.MyTextView
+        android:id="@+id/txtTransactionCardNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/txtTransactionID"
+        android:layout_marginTop="@dimen/padding_5"
+        android:padding="@dimen/padding_5"
+        android:text="CARD NUMBER : "
+        android:textColor="#000"
+        android:textSize="@dimen/font_15" />
+
+    <com.smartpeak.functions.MyTextView
+        android:id="@+id/txtTransactionAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/txtTransactionID"
+        android:layout_marginTop="@dimen/padding_5"
+        android:padding="@dimen/padding_5"
+        android:text="AMOUNT : "
+        android:textColor="#000"
+        android:textSize="@dimen/font_15" />
+
+    <com.smartpeak.functions.MyTextView
+        android:id="@+id/txtTransactionBatchNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/txtTransactionCardNumber"
+        android:layout_marginTop="@dimen/padding_5"
+        android:padding="@dimen/padding_5"
+        android:text="BATCH NUMBER : "
+        android:textColor="#000"
+        android:textSize="@dimen/font_12" />
+
+    <com.smartpeak.functions.MyTextView
+        android:id="@+id/txtTransactionAuthCode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/txtTransactionCardNumber"
+        android:layout_marginTop="@dimen/padding_5"
+        android:padding="@dimen/padding_5"
+        android:text="AUTH CODE : "
+        android:textColor="#000"
+        android:textSize="@dimen/font_12" />
+
+
+</RelativeLayout>

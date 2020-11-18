@@ -1,0 +1,134 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="actionOverflowMenuStyle">@style/MyOverflowMenu</item>
+    </style>
+
+    <style name="SettingsAppTheme" parent="Theme.MaterialComponents.Light">
+        <item name="colorPrimary">@color/settingBackGroundColor</item>
+        <item name="colorPrimaryDark">@color/settingBackGroundColor</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="l">true</item>
+
+    </style>
+
+
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.NoActionBar" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <style name="LoginTextStyle">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/textColor</item>
+        <item name="android:drawablePadding">10sp</item>
+    </style>
+
+
+    <style name="ButtonStyle" parent="Widget.MaterialComponents.Button">
+        <item name="android:layout_marginTop">@dimen/differentWidgetSpacing</item>
+        <item name="backgroundTint">@color/colorPrimary</item>
+        <item name="background">@color/colorPrimary</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:padding">@dimen/buttonPadding</item>
+        <item name="android:textColor">@color/buttonTextColor</item>
+    </style>
+
+    <style name="EditTextBoxStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="android:layout_marginTop">@dimen/widgetSpacing</item>
+        <item name="boxStrokeColor">@color/colorPrimary</item>
+
+
+
+
+
+
+
+
+    </style>
+
+    <style name="HeadingTextStyle">
+        <item name="android:textColor">@color/textColor</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:textStyle">bold</item>
+
+    </style>
+
+    <style name="SubHeadingTextStyle">
+        <item name="android:textColor">@color/textColor</item>
+        <item name="android:textSize">18sp</item>
+
+    </style>
+
+    <style name="SubHeadingTextStyle2">
+        <item name="android:textColor">@color/textColor</item>
+        <item name="android:textSize">14sp</item>
+
+    </style>
+
+    <!--Billing Color details-->
+    
+    <style name="billTitleTextStyle">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/blackColor</item>
+
+    </style>
+
+
+    <style name="billingCalculationTextStyle">
+        <item name="android:gravity">end|center</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@android:color/white</item>
+
+    </style>
+
+    <style name="billingCalculationSubTextStyle">
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">14sp</item>
+
+        <item name="android:textColor">@android:color/white</item>
+
+    </style>
+
+
+    <!--menu style-->
+
+
+    <style name="MyOverflowMenu" parent="Widget.AppCompat.PopupMenu.Overflow" >
+        <item name="android:overlapAnchor" tools:targetApi="lollipop">false</item>
+        <item name="android:dropDownVerticalOffset">4.0dip</item>
+
+
+    </style>
+
+    <style name="DisabledButton" parent="ThemeOverlay.AppCompat.Light">
+
+
+            <item name="colorControlNormal">@color/colorPrimary</item>
+            <item name="colorControlActivated">@color/colorPrimary</item>
+
+
+
+    </style>
+
+
+    <style name="StyledScrollerTextAppearance">
+    <item name="android:gravity">center</item>
+    <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+
+    <item name="android:textColor">@android:color/white</item>
+    </style>
+
+
+
+</resources>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawerLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+
+    tools:context=".sales_menu_components.salesmenu.view.SalesMenuView">
+
+
+    <com.google.android.material.tabs.TabLayout
+
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:elevation="10dp"
+        app:tabIndicatorColor="#e5e4e2"
+        app:tabIndicatorHeight="4dp"
+
+        app:tabSelectedTextColor="@android:color/white"
+        app:tabTextColor="#f4f0ec"
+
+        />
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+
+        android:layout_height="0dp"
+        android:layout_margin="@dimen/mainPageMargin"
+        android:layout_weight="0.9" />
+
+
+</LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+

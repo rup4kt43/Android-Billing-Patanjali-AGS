@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+
+
+    <group android:id="@+id/menu_group"
+        android:orderInCategory="100">
+        <item
+            android:id="@+id/bill_load"
+
+            android:orderInCategory="100"
+            app:showAsAction="always|withText"
+            android:icon="@drawable/ic_bill"
+
+            android:title="Bill Load" />
+
+
+        <item
+            android:icon="@drawable/ic_sales_return"
+            android:id="@+id/salesReturn"
+            android:orderInCategory="200"
+            app:showAsAction="always|withText"
+            android:title="Sales Return"/>
+
+
+        <item android:id="@+id/salesInvoice"
+            android:orderInCategory="50"
+            android:icon="@drawable/sales_invoice"
+            app:showAsAction="always|withText"
+            android:title="Sales Invoice"/>
+    </group>
+
+
+    <group android:id="@+id/group_logout"
+
+        android:orderInCategory="200">
+        <item android:id="@+id/menu_logout"
+            android:title="LOGOUT"
+            android:icon="@drawable/exit"/>
+
+    </group>
+
+</menu>

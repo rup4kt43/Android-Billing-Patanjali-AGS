@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.androidbilling">
+
+    <uses-sdk tools:overrideLibrary="com.google.zxing.client.android" />
+
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+
+
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <application
+        android:name=".utilities.scanner.MyApplication"
+        android:allowBackup="true"
+        android:hardwareAccelerated="true"
+        android:icon="@drawable/b_pos_logo"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/b_pos_logo"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+
+
+        <activity
+            android:name="com.journeyapps.barcodescanner.CaptureActivity"
+            android:screenOrientation="fullSensor"
+            tools:replace="screenOrientation" />
+        <activity android:name=".dashboard.view.DashboardView" />
+        <activity
+            android:name=".salse_return_component.view.SalesReturnView"
+            android:windowSoftInputMode="adjustPan" />
+        <activity android:name=".Settings.view.Settings" />
+        <activity
+            android:name=".bill_load.view.BillLoadView"
+            android:windowSoftInputMode="adjustPan" />
+        <activity android:name=".sales_menu_components.categorySelection.view.CategorySelectionView" />
+        <activity
+            android:name=".billing_components.bill_save.view.BillSaveView"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".billing_components.billing_preview.view.BillingView"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="adjustPan" />
+        <activity android:name=".sales_menu_components.BatchListingPage.BatchList" />
+        <activity android:name=".sales_menu_components.salesmenu.view.SalesMenuView" />
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+
+        <activity
+            android:name=".login.view.LoginView"
+            android:screenOrientation="portrait" />
+
+
+        <activity
+            android:name=".PermissionActivity.Start"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
