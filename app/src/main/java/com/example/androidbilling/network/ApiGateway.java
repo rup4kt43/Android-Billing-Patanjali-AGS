@@ -8,6 +8,11 @@ import com.example.androidbilling.billing_components.bill_save.pojo.paymentmode.
 import com.example.androidbilling.billing_components.billing_preview.pojo.GetCustomerResponse;
 import com.example.androidbilling.billing_components.billing_preview.pojo.calculation_pojo.CalculationResponse;
 import com.example.androidbilling.dashboard.model.pojo.DashboardResponse;
+import com.example.androidbilling.entries.customer.model.CategoryResponse;
+import com.example.androidbilling.entries.customer.model.CustomerEntryRequest;
+import com.example.androidbilling.entries.customer.model.CustomerEntryResponse;
+import com.example.androidbilling.entries.customer.model.DistrictResponse;
+import com.example.androidbilling.entries.customer.model.StateResponse;
 import com.example.androidbilling.login.model.dto.LoginRequestDTO;
 import com.example.androidbilling.login.model.pojo.LoginResponse;
 import com.example.androidbilling.sales_menu_components.salesmenu.model.pojo.items_details_pojo.ItemDetailsResponse;
@@ -35,7 +40,11 @@ public interface ApiGateway {
 
     String recalculateBill = "recalculatebill";
 
-
+    /* Added by Sujan */
+    String getStateList = "getStateList";
+    String getDistrictList = "getDistrictsList";
+    String getCategoryList = "getCategoryLevel";
+    String saveCustomerEntry = "saveCustomer";
 
 
 
@@ -80,6 +89,21 @@ public interface ApiGateway {
     Call<CalculationResponse> recalculateData(@Body SaveRequest saveRequest);
 
 
+    /* Added By Sujan */
+
+    //-------------------------CustomerEntry--------------------//
+    @GET(getStateList)
+    Call<StateResponse> getStateListData(@Query("companyId") String companyId);
+
+    @GET(getCategoryList)
+    Call<CategoryResponse> getCategoryListData(@Query("companyId") String companyId);
+
+    @GET(getDistrictList)
+    Call<DistrictResponse> getDistrictListData(@Query("companyId") String companyId,
+                                               @Query("stateName") String stateName);
+
+    @POST(saveCustomerEntry)
+    Call<CustomerEntryResponse> saveCustomerEntry(@Body CustomerEntryRequest customerEntryRequest);
 
 
 }

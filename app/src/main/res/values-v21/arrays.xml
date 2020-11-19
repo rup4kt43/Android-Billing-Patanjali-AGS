@@ -52,4 +52,31 @@
         <item>640 x 480</item>
         <item>352 x 288</item>
     </array>
+
+    <!-- Added By Sujan -->
+    <string-array name="payment_methods">
+        <item>Cash</item>
+        <item>Credit</item>
+        <item>Both (Cash &amp; Credit)</item>
+    </string-array>
+
+    <string-array name="sales_type">
+        <item>Local</item>
+        <item>Interstate</item>
+    </string-array>
+
+    <string-array name="integation_type">
+        <item>None</item>
+        <item>SAP</item>
+        <item>CSV</item>
+        <item>EDI</item>
+        <item>Inline HTML</item>
+    </string-array>
+
+    <string-array name="gst_type">
+        <item>Regular</item>
+        <item>Composite</item>
+        <item>Unregister</item>
+    </string-array>
+
 </resources>

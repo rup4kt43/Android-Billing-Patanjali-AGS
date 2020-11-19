@@ -8,6 +8,11 @@ import com.example.androidbilling.billing_components.bill_save.pojo.paymentmode.
 import com.example.androidbilling.billing_components.billing_preview.pojo.GetCustomerResponse;
 import com.example.androidbilling.billing_components.billing_preview.pojo.calculation_pojo.CalculationResponse;
 import com.example.androidbilling.dashboard.model.pojo.DashboardResponse;
+import com.example.androidbilling.entries.customer.model.CategoryResponse;
+import com.example.androidbilling.entries.customer.model.CustomerEntryRequest;
+import com.example.androidbilling.entries.customer.model.CustomerEntryResponse;
+import com.example.androidbilling.entries.customer.model.DistrictResponse;
+import com.example.androidbilling.entries.customer.model.StateResponse;
 import com.example.androidbilling.login.model.dto.LoginRequestDTO;
 import com.example.androidbilling.login.model.pojo.LoginResponse;
 import com.example.androidbilling.sales_menu_components.salesmenu.model.pojo.ItemListResponse;
@@ -130,6 +135,24 @@ public class ApiClient {
 
     public Call<CalculationResponse> recalculateData(SaveRequest saveRequest){
         return apiGateway.recalculateData(saveRequest);
+    }
+
+    /* Added by Sujan */
+
+    public Call<StateResponse> getStateData(String companyId) {
+        return apiGateway.getStateListData(companyId);
+    }
+
+    public Call<CategoryResponse> getCategoryData(String companyId) {
+        return apiGateway.getCategoryListData(companyId);
+    }
+
+    public Call<DistrictResponse> getDistrictData(String companyId, String state) {
+        return apiGateway.getDistrictListData(companyId, state);
+    }
+
+    public Call<CustomerEntryResponse> saveCustomerEntry(CustomerEntryRequest customerEntryRequest) {
+        return apiGateway.saveCustomerEntry(customerEntryRequest);
     }
 
 
