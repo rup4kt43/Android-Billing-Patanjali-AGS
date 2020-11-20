@@ -45,6 +45,7 @@ public class Constants {
     public static String LOCK_EDIT_MODE= "lock_edit_mode";
     public static String ALLOW_ITEM_ADD= "add_item_to_bill_edit";
     public static String BILL_SETTING_CHANGE = "bill_setting_change";
+    public static String ENABLE_SAMRIDHI_CARD_PAYMENT = "enable_samridhi_card_payment";
 
 
 

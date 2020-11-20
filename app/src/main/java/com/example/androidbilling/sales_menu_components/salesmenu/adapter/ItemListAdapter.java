@@ -21,6 +21,7 @@ import com.futuremind.recyclerviewfastscroll.SectionTitleProvider;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class ItemListAdapter extends RecyclerView.Adapter<ItemListAdapter.CustomItemListHolder> implements Filterable, SectionTitleProvider {
@@ -129,15 +130,46 @@ public class ItemListAdapter extends RecyclerView.Adapter<ItemListAdapter.Custom
                             if (row.getDESCA().toLowerCase().contains(charString.toLowerCase())) {
                                 filteredLIst.add(row);
                             }
-                        } else {
-                            if (row.getBARCODE().toLowerCase().matches(charString.toLowerCase())) {
-                                filteredLIst.add(row);
+                        } else if(ItemListFragment.checkedButton.matches("barcode")){
+                            if(row.getBARCODE().toLowerCase().matches(charString.toLowerCase())){
+                                int itemCount = 0;
+                                for (int i=0;i<list.size();i++){
+                                    if(list.get(i).getBARCODE().equalsIgnoreCase(charString.toLowerCase())){
+                                        itemCount++;
+                                    }
+                                }
+
+                                if(itemCount>1){
+
+                                    filteredLIst.add(row);
+                                }
+                                else if(itemCount==1){
+
+
+                                    SalesMenuViewModelProvider.getInstance().retriveItemDetails(row.getMCODE());
+                                    SalesMenuViewModelProvider.getInstance().updateSearchStatus(true);
+
+
+
+                                }else{
+                                    filteredLIst.add(row);
+                                }
+
+
+
                             }
                         }
 
 
+
                     }
                     itemListFiltered = filteredLIst;
+                    Collections.sort(filteredLIst, new Comparator<ItemListItem>() {
+                        @Override
+                        public int compare(ItemListItem itemListItem, ItemListItem t1) {
+                            return Double.compare(Double.parseDouble(itemListItem.getnWeight()), Double.parseDouble(t1.getnWeight()));
+                        }
+                    });
                 }
                 FilterResults filterResults = new FilterResults();
                 filterResults.values = itemListFiltered;

@@ -41,7 +41,7 @@ import java.util.List;
 public class ItemListFragment extends Fragment {
 
     private final SalesMenuView context;
-    FragmentItemListBinding itemListBinding;
+    public static FragmentItemListBinding itemListBinding;
     static CoordinatorLayout coordinatorLayout;
     ItemListAdapter itemListAdapter;
     public final List<ItemListItem> list;
@@ -222,8 +222,12 @@ public class ItemListFragment extends Fragment {
 
 
     public static void  loadBarcode(String barcode){
-        GlobalValues.scannedBarcode = barcode;
+        itemListBinding.searchView.onActionViewExpanded();
+        checkedButton = "barcode";
         rb_barcode.setChecked(true);
+        GlobalValues.scannedBarcode = barcode;
+        itemListBinding.searchView.setQuery(barcode,true);
+        itemListBinding.searchView.clearFocus();
 
     }
 

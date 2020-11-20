@@ -171,6 +171,21 @@ public class PreferenceUtils {
     }
 
 
+    //-----------------------Samridhi card payment option-------------------------------//
+    public static void updatedSamridhiCardPaymentOption(Context context,boolean status){
+        editor = context.getSharedPreferences(Constants.SETTING_PREF,Context.MODE_PRIVATE).edit();
+        editor.putBoolean(Constants.ENABLE_SAMRIDHI_CARD_PAYMENT, status);
+        editor.apply();
+    }
+
+    public static boolean getSamridhiPaymentStatus(Context context){
+        prefs = context.getSharedPreferences(Constants.SETTING_PREF,Context.MODE_PRIVATE);
+        return  prefs.getBoolean(Constants.ENABLE_SAMRIDHI_CARD_PAYMENT,false);
+
+    }
+
+
+
 
 
 }

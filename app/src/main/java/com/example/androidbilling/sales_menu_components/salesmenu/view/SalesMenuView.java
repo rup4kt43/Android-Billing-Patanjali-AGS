@@ -414,30 +414,22 @@ public class SalesMenuView extends AppCompatActivity {
     @Override
     public boolean dispatchKeyEvent(KeyEvent e) {
 
-
-        /*if(e.getAction()==KeyEvent.ACTION_DOWN){
-
-            char pressedKey = (char) e.getUnicodeChar();
-            barcode += pressedKey;
-            SweetToast.info(this,barcode);
-        }
-        if (e.getAction()==KeyEvent.ACTION_DOWN && e.getKeyCode() == KeyEvent.KEYCODE_ENTER) {
-
-            SweetToast.info(this,barcode);
-            barcode="";
-        }*/
-
-
-
         if (homePageBinding.viewPager.getCurrentItem() == 0) {
-            // If the user is currently looking at the first step, allow the system to handle the
-            // Back button. This calls finish() on this activity and pops the back stack.
-            if(e.getKeyCode() == KeyEvent.KEYCODE_ENTER){
+            if(e.getAction()==KeyEvent.ACTION_DOWN){
+
                 char pressedKey = (char) e.getUnicodeChar();
-                barcode = String.valueOf(pressedKey);
-                SweetToast.info(this,barcode);
-                ItemListFragment.loadBarcode(barcode);
+                barcode += pressedKey;
+
             }
+            if (e.getAction()==KeyEvent.ACTION_DOWN && e.getKeyCode() == KeyEvent.KEYCODE_ENTER) {
+
+                ItemListFragment.loadBarcode(barcode.trim());
+
+                SweetToast.info(this,barcode.trim());
+                barcode = "";
+
+            }
+
 
 
 

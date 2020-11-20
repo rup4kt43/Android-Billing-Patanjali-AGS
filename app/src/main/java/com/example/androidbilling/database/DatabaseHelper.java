@@ -27,6 +27,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String COL_BARCODE = "barcode";
     private static final String COL_BRAND = "brand";
     private static final String COL_DIVISION = "division";
+
+    private static final String COL_GWEIGHT = "gWeight";
+    private static final String COL_NWEIGHT = "nWeight";
     //private static final String COL_MENUCODE = "menucode";
     // private static final String COL_TYPE = "type";
     //private static final String COL_BASEUNIT = "baseunit";
@@ -39,7 +42,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public static final String CREATE_TABLE_MENU_ITEM = "CREATE TABLE " +
             TABLE_MENU_ITEM + "(" + COL_ID + " INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, " + COL_VERTICAL_NAME + " TEXT, " +
-            COL_MCODE + " TEXT, " + COL_BRAND + " TEXT, " + COL_DESCA + " TEXT, " + COL_BARCODE + " TEXT, " +
+            COL_MCODE + " TEXT, " + COL_BRAND + " TEXT, " + COL_DESCA + " TEXT, " + COL_BARCODE + " TEXT, " + COL_NWEIGHT+" TEXT, "+ COL_GWEIGHT + " TEXT, "+
             COL_DIVISION + " TEXT, " + IS_CHECKED + " INTEGER DEFAULT 1 )";
 
 
@@ -81,6 +84,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         clearMenuItem();
         for (int i = 0; i < itemList.size(); i++) {
             ContentValues cv = new ContentValues();
+            cv.put(COL_GWEIGHT,itemList.get(i).getgWeight());
+            cv.put(COL_NWEIGHT,itemList.get(i).getnWeight());
             cv.put(COL_MCODE, itemList.get(i).getMCODE());
             cv.put(COL_DIVISION, itemList.get(i).getDIVISIONS());
             cv.put(COL_VERTICAL_NAME, itemList.get(i).getVERTICAL());
@@ -141,6 +146,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         if (cursor.moveToFirst()) {
             do {
                 ItemListItem itemListItem = new ItemListItem();
+                itemListItem.setnWeight(cursor.getString(cursor.getColumnIndex(COL_NWEIGHT)));
+                itemListItem.setnWeight(cursor.getString(cursor.getColumnIndex(COL_GWEIGHT)));
                 itemListItem.setbARCODE(cursor.getString(cursor.getColumnIndex(COL_BARCODE)));
                 itemListItem.setbRAND(cursor.getString(cursor.getColumnIndex(COL_BRAND)));
                 itemListItem.setdESCA(cursor.getString(cursor.getColumnIndex(COL_DESCA)));

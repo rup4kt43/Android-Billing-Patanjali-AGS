@@ -25,6 +25,27 @@ public class ItemListItem{
 	@SerializedName("BRAND")
 	public String bRAND;
 
+	@SerializedName("GWEIGHT")
+	public String gWeight;
+
+	@SerializedName("NWEIGHT")
+	public String nWeight;
+
+	public String getgWeight() {
+		return gWeight;
+	}
+
+	public void setgWeight(String gWeight) {
+		this.gWeight = gWeight;
+	}
+
+	public String getnWeight() {
+		return nWeight;
+	}
+
+	public void setnWeight(String nWeight) {
+		this.nWeight = nWeight;
+	}
 
 	public void setvERTICAL(String vERTICAL) {
 		this.vERTICAL = vERTICAL;

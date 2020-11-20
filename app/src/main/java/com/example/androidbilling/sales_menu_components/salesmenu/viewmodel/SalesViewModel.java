@@ -25,6 +25,8 @@ public class SalesViewModel extends ViewModel {
     private List<BatchesItem> batchList;
     int matchPos = -1;
 
+    //For clearing search view data
+    private MutableLiveData<Boolean> searchViewClearStatus ;
 
     //Repositories
     private SalesRepository salesRepository;
@@ -58,6 +60,10 @@ public class SalesViewModel extends ViewModel {
 
     public SalesViewModel() {
         batchList = new ArrayList<>();
+
+
+        searchViewClearStatus = new MutableLiveData<>();
+        searchViewClearStatus.postValue(false);
 
         //Repository
         salesRepository = SalesRepository.getInstance();
@@ -233,6 +239,8 @@ public class SalesViewModel extends ViewModel {
     }
 
 
-
+    public void updateSearchStatus(boolean b) {
+        searchViewClearStatus.postValue(b);
+    }
 
 }
